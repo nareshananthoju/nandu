@@ -1,0 +1,346 @@
+<div class="container-fluid">
+    <div class="widget-body">
+        <div class="row">
+            <form id="wizard-1" novalidate="novalidate">
+                <div id="bootstrap-wizard-1" class="col-sm-12">
+                    <div class="form-bootstrapWizard">
+                        <ul class="bootstrapWizard form-wizard">
+                            <li [ngClass]="{active: step==='step1'}">
+                                <a> <span class="step">1</span> <span class="title">Step1</span> </a>
+                            </li>
+                            <li [ngClass]="{active: step==='step2'}">
+                                <a> <span class="step">2</span> <span class="title">Step2</span> </a>
+                            </li>
+                            <li [ngClass]="{active: step==='step3'}">
+                                <a> <span class="step">3</span> <span class="title">Step3</span> </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="tab-content">
+                        <div class="col-md-12" *ngIf="(step==='step1')">
+                            <div class="form-actions">
+                                <h3>Step 1</h3>
+                                <div class="col-md-12">
+                                    <form role="form">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-4">Field1</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="field1" id="field1">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-4">Field2</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="field2" id="field2">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-4">Field3</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="field3" id="field3">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="username" class="col-md-4">Field4</label>
+                                                    <div class="col-md-8">
+                                                        <input type="text" class="form-control" name="field4" id="field4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 multi-btns">
+                                                <button type="button" class="btn btn-primary" (click)="nextStep1()">Next</button>
+                                                <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" *ngIf="(step==='step2')">
+                            <div class="form-actions">
+                                <h3>Step 2</h3>
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="username" class="col-md-4">Field1</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="field1" id="field1">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username" class="col-md-4">Field2</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="field2" id="field2">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 multi-btns">
+                                            <button type="button" class="btn btn-primary" (click)="nextStep2()">Next</button>
+                                            <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-12" *ngIf="(step==='step3')">
+                            <div class="form-actions">
+                                <h3>Step 3</h3>
+                                <form role="form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="username" class="col-md-4">Field1</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="field1" id="field1">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username" class="col-md-4">Field2</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="field2" id="field2">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="username" class="col-md-4">Field3</label>
+                                                <div class="col-md-8">
+                                                    <input type="text" class="form-control" name="field3" id="field3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 multi-btns">
+                                            <button type="button" class="btn btn-primary" (click)="nextStep3()">Next</button>
+                                            <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+/*Start Wizard*/
+
+.bootstrapWizard {
+  display: block;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  width: 100%
+}
+
+.bootstrapWizard a:hover,.bootstrapWizard a:active,.bootstrapWizard a:focus {
+  text-decoration: none
+}
+
+.bootstrapWizard li {
+  display: block;
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding-left: 0
+}
+.bootstrapWizard1 li {
+  display: block;
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  padding-left: 0;
+  border-left: 1px solid #cfcfcf;
+}
+.bootstrapWizard1 li:before {
+  border-top: 0px !important;
+  content: "";
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  top: 11px;
+  right: 1px;
+  width: 100%;
+  z-index: 1
+}
+
+.bootstrapWizard li:before {
+  border-top: 3px solid #55606E;
+  content: "";
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  top: 11px;
+  right: 1px;
+  width: 100%;
+  z-index: 1
+}
+
+.bootstrapWizard li:first-child:before {
+  left: 50%;
+  max-width: 50%
+}
+
+.bootstrapWizard li:last-child:before {
+  max-width: 50%;
+  width: 50%
+}
+
+.bootstrapWizard li.complete .step {
+  background: #0aa66e;
+  padding: 1px 6px;
+  border: 3px solid #55606E
+}
+
+.bootstrapWizard li .step i {
+  font-size: 10px;
+  font-weight: 400;
+  position: relative;
+  top: -1.5px
+}
+
+.bootstrapWizard li .step {
+  background: #B2B5B9;
+  color: #fff;
+  display: inline;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 12px;
+  padding: 7px 13px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  transition: all .1s linear 0s
+}
+.bootstrapWizard1 li .formstep {
+  background: #B2B5B9;
+  color: #fff;
+  display: inline;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 12px;
+  padding: 7px 13px;
+  border: 3px solid transparent;
+  border-radius: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+  transition: all .1s linear 0s
+}
+
+.bootstrapWizard li.active .step,.bootstrapWizard li.active.complete .step {
+  background: #1e4648;
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 13px;
+  font-size: 15px;
+  border-radius: 50%;
+  border: 3px solid #55606E
+}
+.bootstrapWizard1 li.active .formstep,.bootstrapWizard1 li.active.complete .formstep {
+  background: #1e4648;
+  color: #fff;
+  font-weight: 600;
+  padding: 7px 13px;
+  font-size: 15px;
+  border-radius: 0;
+  
+}
+
+.bootstrapWizard li.complete .title,.bootstrapWizard li.active .title {
+  color: #2B3D53;
+}
+.bootstrapWizard1 li.complete .title,.bootstrapWizard1 li.active .title {
+  color: #FFD140;
+}
+
+
+.bootstrapWizard li .title {
+  color: #bfbfbf;
+  display: block;
+  font-size: 13px;
+  line-height: 15px;
+  max-width: 100%;
+  position: relative;
+  table-layout: fixed;
+  text-align: center;
+  top: 20px;
+  word-wrap: break-word;
+  z-index: 104
+}
+.bootstrapWizard1 li .title {
+  color: #fff;
+  display: block;
+  font-size: 13px;
+  line-height: 15px;
+  max-width: 100%;
+  position: relative;
+  table-layout: fixed;
+  text-align: center;
+  top: 0px;
+  word-wrap: break-word;
+  z-index: 104
+}
+.form-bootstrapWizard .bootstrapWizard1{
+  margin: 0px;
+}
+
+.wizard-actions {
+  display: block;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  width: 100%
+}
+
+.wizard-actions li {
+  display: inline
+}
+
+.tab-content {
+  background-color: transparent;
+  margin-top: 3%;
+}
+.form-actions{
+  margin-bottom: 1%;
+}
+.ui-progressbar .ui-progressbar-value {
+ border: 1px solid #1e4648 !important; 
+   background: #FFD140 !important;
+}
+.form-group{
+	display: table;
+	width: 100%;
+	margin-bottom: 1.4rem;
+}
+/*End Wizard*/
+</style>
+*TypeScript*
+step: string;
+
+ngOnInit() {
+	this.step = 'step1';
+}
+
+private nextStep1() {
+	this.step = 'step2';
+}
+private nextStep2() {
+	this.step = 'step3';
+}
